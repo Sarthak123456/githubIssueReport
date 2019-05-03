@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin:0px;
+  padding : 0px;
+}
+body{
+  margin:0px;
+  padding : 0px;
+}
+.form-control{
+  display: inline;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.btn{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  margin-top: -3px;
+  border-bottom-right-radius: 5px;
+}
+.table{
+  margin-top:50px;
+}

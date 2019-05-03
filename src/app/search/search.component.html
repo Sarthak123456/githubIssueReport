@@ -1,0 +1,39 @@
+<form (ngSubmit) = 'getIssues()' #githubUrl = 'ngForm'>
+
+  <input type='text' name='url' [(ngModel)] ='github.url' class='form-control col-md-6' placeholder="Enter the Github URL!">
+  <button type ='submit' value = 'Submit' class='form-control btn btn-primary col-md-1'>Submit!</button>
+</form>
+
+<p *ngIf="!obj.loading && !obj.first"> Loading ...</p>
+
+<!--
+<p *ngIf="obj.loading"> Open :  {{ obj.open.total_count }}</p>
+<p *ngIf="obj.loading"> yesterday open :  {{ obj.yesterday.total_count }}</p>
+ <p *ngIf="obj.loading"> sevenDaysAgo open : {{ obj.sevenDaysAgo.total_count }}</p>
+ <p *ngIf="obj.loading"> pastSevenDays open : {{ obj.pastSevenDays.total_count }}</p> -->
+
+ <div class="table-responsive">
+ <table class="table" *ngIf="obj.loading">
+  <thead class="thead-dark">
+    <tr>
+      <!-- <th scope="col">Sr.</th> -->
+      <th scope="col">Open Issues</th>
+      <th scope="col">Issues opened in the last 24 hours</th>
+      <th scope="col">Issues opened more than 24 hours ago but less than 7 days ago</th>
+      <th scope="col">Issues opened more than 7 days ago </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ obj.open.total_count }}</td>
+      <td>{{ obj.yesterday.total_count }}</td>
+      <td>{{ obj.sevenDaysAgo.total_count }}</td>
+      <td>{{ obj.pastSevenDays.total_count }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
